@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FtA4lIZYBSLhdwkOU0mviZqVkuyA+HG6+OOO2lie/Xvm8ZhBbT2eW5ufXrDKCMuxXketX9WY9POtbGl8jzJHaA==",
+  "dgSpecHash": "JNLqO0w5O0I4OmuB6llmEUNjRnggqM2tf4BHlQ8LlsU7pKjJARsunCgeOHI1n58mahKpINa1JbI4t5lHDERx+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlog\\MyBlogAPI.csproj",
+  "projectFilePath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogAPI\\MyBlogAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\florent\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\florent\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

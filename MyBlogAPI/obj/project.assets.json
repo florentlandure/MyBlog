@@ -6093,11 +6093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlog\\MyBlogAPI.csproj",
+      "projectUniqueName": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogAPI\\MyBlogAPI.csproj",
       "projectName": "MyBlogAPI",
-      "projectPath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlog\\MyBlogAPI.csproj",
+      "projectPath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogAPI\\MyBlogAPI.csproj",
       "packagesPath": "C:\\Users\\florent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlog\\obj\\",
+      "outputPath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
