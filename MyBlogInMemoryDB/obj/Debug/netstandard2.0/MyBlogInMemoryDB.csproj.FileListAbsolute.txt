@@ -1,0 +1,12 @@
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\bin\Debug\netstandard2.0\MyBlogInMemoryDB.deps.json
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\bin\Debug\netstandard2.0\MyBlogInMemoryDB.dll
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\bin\Debug\netstandard2.0\MyBlogInMemoryDB.pdb
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\bin\Debug\netstandard2.0\MyBlogCore.dll
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\bin\Debug\netstandard2.0\MyBlogCore.pdb
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.csprojAssemblyReference.cache
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.csproj.CoreCompileInputs.cache
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.AssemblyInfoInputs.cache
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.AssemblyInfo.cs
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.csproj.CopyComplete
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.dll
+C:\Users\florent\source\repos\MyBlog\MyBlogInMemoryDB\obj\Debug\netstandard2.0\MyBlogInMemoryDB.pdb

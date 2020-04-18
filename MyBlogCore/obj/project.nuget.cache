@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CLqZcqHcV3ion+r/FPpozMj3EF/1xGL1+qpVFFeGf/FIU92gyHERxe6bjF39Y8L5+Rzn7OAz+zM+98PDpoSYdg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogCore\\MyBlogCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\florent\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\florent\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\florent\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
