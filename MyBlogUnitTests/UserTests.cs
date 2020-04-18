@@ -44,7 +44,7 @@ namespace MyBlogUnitTests
             user1 = inMemoryUserRepository.Add(user1);
             List<User> userList = inMemoryUserRepository.GetAll();
             Assert.AreEqual(userList.Count, 1);
-            Assert.AreEqual(userList[0].Id, "1");
+            Assert.AreEqual(userList[0].Id, 1);
             Assert.AreSame(userList[0], user1);
             Assert.AreNotEqual(user1.CreatedAt, new DateTime());
             Assert.AreNotEqual(user1.LastModified, new DateTime());
@@ -70,8 +70,8 @@ namespace MyBlogUnitTests
             Assert.AreEqual(userList.Count, 2);
             Assert.AreEqual(userList[0], user1);
             Assert.AreEqual(userList[1], user2);
-            Assert.AreEqual(userList[0].Id, "1");
-            Assert.AreEqual(userList[1].Id, "2");
+            Assert.AreEqual(userList[0].Id, 1);
+            Assert.AreEqual(userList[1].Id, 2);
         }
 
         [Test]
@@ -100,7 +100,7 @@ namespace MyBlogUnitTests
         [Test]
         public void UpdateUserFailTest()
         {
-            user1.Id = "1";
+            user1.Id = 1;
             User updatedUser = new User(user1)
             {
                 Password = "Password"

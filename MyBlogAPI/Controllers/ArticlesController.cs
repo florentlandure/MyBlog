@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyBlogCore.Models;
+using MyBlogCore.Repositories;
 
 namespace MyBlogAPI.Controllers
 {
@@ -11,24 +13,35 @@ namespace MyBlogAPI.Controllers
     [ApiController]
     public class ArticlesController : ControllerBase
     {
+        private readonly IArticleRepository _articleRepository;
+
+        public ArticlesController(IArticleRepository articleRepository)
+        {
+            _articleRepository = articleRepository;
+        }
+
         // GET: api/Articles
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Article> Get()
         {
-            return new string[] { "value1", "value2", "value3" };
+            Console.WriteLine("Get articles");
+            return _articleRepository.GetAll();
         }
 
         // GET: api/Articles/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Article Get(int id)
         {
-            return "value";
+            return _articleRepository.Get(id);
         }
 
         // POST: api/Articles
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Article article)
         {
+            Console.WriteLine(article);
+            _articleRepository.Add(article);
+            Response.StatusCode = 204;
         }
 
         // PUT: api/Articles/5
@@ -41,6 +54,7 @@ namespace MyBlogAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _articleRepository.Remove(id);
         }
     }
 }

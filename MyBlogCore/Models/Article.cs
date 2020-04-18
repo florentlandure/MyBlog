@@ -1,17 +1,20 @@
 ﻿using MyBlogCore.Utils;
+using Newtonsoft.Json;
 using System;
 
 namespace MyBlogCore.Models
 {
     public class Article : Entity
     {
-        public string AuthorId { get; set; }
+        public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string Thumbnail { get; set; }
         public string Banner { get; set; }
 
-        public Article(string authorId, string title, string content)
+        public Article() { }
+
+        public Article(int authorId, string title, string content)
         {
             ValidateArguments(authorId, title, content);
             AuthorId = authorId;
@@ -28,11 +31,19 @@ namespace MyBlogCore.Models
             Banner = article.Banner;
         }
 
-        private void ValidateArguments(string authorId, string title, string content)
+        private void ValidateArguments(int authorId, string title, string content)
         {
-            ValidationUtils.ValidateEmptyArgument(authorId, "Author is not defined");
+            if (authorId == 0)
+            {
+                throw new ArgumentException("Author is not defined");
+            }
             ValidationUtils.ValidateEmptyArgument(title, "Title is not defined");
             ValidationUtils.ValidateEmptyArgument(content, "Content is not defined");
+        }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
         }
     }
 }

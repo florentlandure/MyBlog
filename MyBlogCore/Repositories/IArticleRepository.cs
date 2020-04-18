@@ -9,8 +9,8 @@ namespace MyBlogCore.Repositories
     {
         Article Add(Article article);
         List<Article> GetAll();
-        Article Get(string id);
-        Article Update(string id, Article modifiedArticle);
-        void Remove(string id);
+        Article Get(int id);
+        Article Update(int id, Article modifiedArticle);
+        void Remove(int id);
     }
 }

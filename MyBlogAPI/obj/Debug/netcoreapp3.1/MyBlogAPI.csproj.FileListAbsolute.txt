@@ -190,3 +190,5 @@ C:\Users\florent\source\repos\MyBlog\MyBlogAPI\obj\Debug\netcoreapp3.1\staticweb
 C:\Users\florent\source\repos\MyBlog\MyBlogAPI\obj\Debug\netcoreapp3.1\MyBlogAPI.dll
 C:\Users\florent\source\repos\MyBlog\MyBlogAPI\obj\Debug\netcoreapp3.1\MyBlogAPI.pdb
 C:\Users\florent\source\repos\MyBlog\MyBlogAPI\obj\Debug\netcoreapp3.1\MyBlogAPI.genruntimeconfig.cache
+C:\Users\florent\source\repos\MyBlog\MyBlogAPI\bin\Debug\netcoreapp3.1\MyBlogInMemoryDB.dll
+C:\Users\florent\source\repos\MyBlog\MyBlogAPI\bin\Debug\netcoreapp3.1\MyBlogInMemoryDB.pdb

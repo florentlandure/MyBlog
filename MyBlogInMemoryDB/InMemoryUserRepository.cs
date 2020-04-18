@@ -25,7 +25,7 @@ namespace MyBlogInMemoryDB
             DateTime now = DateTime.Now;
             User userWithId = new User(user.Email, user.Name)
             {
-                Id = $"{_userList.Count + 1}",
+                Id = _userList.Count + 1,
                 CreatedAt = now,
                 LastModified = now
             };
@@ -33,12 +33,12 @@ namespace MyBlogInMemoryDB
             return userWithId;
         }
 
-        public User Get(string id)
+        public User Get(int id)
         {
             return _userList.Find(user => user.Id == id);
         }
 
-        public User Update(string id, User modifiedUser)
+        public User Update(int id, User modifiedUser)
         {
             int index = FindIndex(id);
 
@@ -50,7 +50,7 @@ namespace MyBlogInMemoryDB
             return modifiedUser;
         }
 
-        public void Remove(string id)
+        public void Remove(int id)
         {
             int index = FindIndex(id);
             
@@ -69,7 +69,7 @@ namespace MyBlogInMemoryDB
             }
         }
 
-        private int FindIndex(string id)
+        private int FindIndex(int id)
         {
             return _userList.FindIndex(user => user.Id == id);
         }

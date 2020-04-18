@@ -26,6 +26,7 @@
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "MyBlogCore": "1.0.0",
+          "MyBlogInMemoryDB": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1545,6 +1546,17 @@
         },
         "compile": {
           "MyBlogCore.dll": {}
+        }
+      },
+      "MyBlogInMemoryDB/1.0.0": {
+        "dependencies": {
+          "MyBlogCore": "1.0.0"
+        },
+        "runtime": {
+          "MyBlogInMemoryDB.dll": {}
+        },
+        "compile": {
+          "MyBlogInMemoryDB.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3997,6 +4009,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "MyBlogCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBlogInMemoryDB/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -19,7 +19,7 @@ namespace MyBlogInMemoryDB
             DateTime now = DateTime.Now;
             Article articleWithId = new Article(article)
             {
-                Id = $"{_articleList.Count + 1}",
+                Id = _articleList.Count + 1,
                 CreatedAt = now,
                 LastModified = now
             };
@@ -32,12 +32,12 @@ namespace MyBlogInMemoryDB
             return _articleList;
         }
 
-        public Article Get(string id)
+        public Article Get(int id)
         {
             return _articleList.Find(article => article.Id == id);
         }
 
-        public Article Update(string id, Article modifiedArticle)
+        public Article Update(int id, Article modifiedArticle)
         {
             int index = FindIndex(id);
 
@@ -49,7 +49,7 @@ namespace MyBlogInMemoryDB
             return modifiedArticle;
         }
 
-        public void Remove(string id)
+        public void Remove(int id)
         {
             int index = FindIndex(id);
 
@@ -59,7 +59,7 @@ namespace MyBlogInMemoryDB
             }
         }
 
-        private int FindIndex(string id)
+        private int FindIndex(int id)
         {
             return _articleList.FindIndex(article => article.Id == id);
         }

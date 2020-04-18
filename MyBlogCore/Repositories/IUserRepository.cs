@@ -9,11 +9,11 @@ namespace MyBlogCore.Repositories
 
         User Add(User user);
 
-        User Get(string id);
+        User Get(int id);
 
-        User Update(string id, User modifiedUser);
+        User Update(int id, User modifiedUser);
 
-        void Remove(string id);
+        void Remove(int id);
 
         void CheckEmailDuplicate(string email);
     }

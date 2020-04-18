@@ -16,8 +16,8 @@ namespace MyBlogUnitTests
         public void Setup()
         {
             inMemoryArticleRepository = new InMemoryArticleRepository();
-            article1 = new Article("1", "Title 1", "Content 1");
-            article2 = new Article("Author", "Title 2", "Content 2");
+            article1 = new Article(1, "Title 1", "Content 1");
+            article2 = new Article(2, "Title 2", "Content 2");
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace MyBlogUnitTests
         {
             ArgumentException exception = Assert.Throws<ArgumentException>(delegate
             {
-                new Article("", "", "");
+                new Article(0, "", "");
             });
             Assert.AreEqual(exception.Message, "Author is not defined");
         }
@@ -35,7 +35,7 @@ namespace MyBlogUnitTests
         {
             ArgumentException exception = Assert.Throws<ArgumentException>(delegate
             {
-                new Article("1", "", "");
+                new Article(1, "", "");
             });
             Assert.AreEqual(exception.Message, "Title is not defined");
         }
@@ -45,7 +45,7 @@ namespace MyBlogUnitTests
         {
             ArgumentException exception = Assert.Throws<ArgumentException>(delegate
             {
-                new Article("1", "Title", "");
+                new Article(1, "Title", "");
             });
             Assert.AreEqual(exception.Message, "Content is not defined");
         }
@@ -53,7 +53,7 @@ namespace MyBlogUnitTests
         [Test]
         public void ValidArticleTest()
         {
-            Assert.AreEqual(article1.AuthorId, "1");
+            Assert.AreEqual(article1.AuthorId, 1);
             Assert.AreEqual(article1.Title, "Title 1");
             Assert.AreEqual(article1.Content, "Content 1");
         }
@@ -64,7 +64,7 @@ namespace MyBlogUnitTests
             article1 = inMemoryArticleRepository.Add(article1);
             List<Article> articleList = inMemoryArticleRepository.GetAll();
             Assert.AreEqual(articleList.Count, 1);
-            Assert.AreEqual(article1.Id, "1");
+            Assert.AreEqual(article1.Id, 1);
             Assert.AreNotEqual(article1.CreatedAt, new DateTime());
             Assert.AreNotEqual(article1.LastModified, new DateTime());
         }
@@ -78,8 +78,8 @@ namespace MyBlogUnitTests
             Assert.AreEqual(articleList.Count, 2);
             Assert.AreEqual(articleList[0], article1);
             Assert.AreEqual(articleList[1], article2);
-            Assert.AreEqual(article1.Id, "1");
-            Assert.AreEqual(article2.Id, "2");
+            Assert.AreEqual(article1.Id, 1);
+            Assert.AreEqual(article2.Id, 2);
         }
 
         [Test]
@@ -107,7 +107,7 @@ namespace MyBlogUnitTests
         [Test]
         public void UpdateArticleFailTest()
         {
-            article1.Id = "1";
+            article1.Id = 1;
             Article updatedArticle = new Article(article1)
             {
                 Thumbnail = "Thumbnail"
