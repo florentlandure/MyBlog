@@ -1,9 +1,9 @@
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\bin\Debug\netstandard2.0\MyBlogCore.deps.json
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\bin\Debug\netstandard2.0\MyBlogCore.dll
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\bin\Debug\netstandard2.0\MyBlogCore.pdb
-C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.csprojAssemblyReference.cache
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.AssemblyInfoInputs.cache
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.AssemblyInfo.cs
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.dll
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.pdb
 C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.csproj.CoreCompileInputs.cache
+C:\Users\florent\source\repos\MyBlog\MyBlogCore\obj\Debug\netstandard2.0\MyBlogCore.csprojAssemblyReference.cache

@@ -1,4 +1,4 @@
-﻿using MyBlogCore;
+﻿using MyBlogCore.Models;
 using MyBlogCore.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,13 +14,14 @@ namespace MyBlogInMemoryDB
             _userList = new List<User>();
         }
 
-        public List<User> getAll()
+        public List<User> GetAll()
         {
             return _userList;
         }
 
         public User Add(User user)
         {
+            CheckEmailDuplicate(user.Email);
             DateTime now = DateTime.Now;
             User userWithId = new User(user.Email, user.Name)
             {
@@ -39,7 +40,7 @@ namespace MyBlogInMemoryDB
 
         public User Update(string id, User modifiedUser)
         {
-            int index = _userList.FindIndex(user => user.Id == id);
+            int index = FindIndex(id);
 
             if (index > -1)
             {
@@ -51,12 +52,26 @@ namespace MyBlogInMemoryDB
 
         public void Remove(string id)
         {
-            int index = _userList.FindIndex(user => user.Id == id);
+            int index = FindIndex(id);
             
             if (index > -1)
             {
                 _userList.RemoveAt(index);
             }
+        }
+
+        public void CheckEmailDuplicate(string email)
+        {
+            int index = _userList.FindIndex(user => user.Email == email);
+            if (index > -1)
+            {
+                throw new Exception("Email already used");
+            }
+        }
+
+        private int FindIndex(string id)
+        {
+            return _userList.FindIndex(user => user.Id == id);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using MyBlogCore;
+using MyBlogCore.Models;
 using System.Collections.Generic;
 using MyBlogCore.Repositories;
 using MyBlogInMemoryDB;
@@ -21,13 +21,44 @@ namespace MyBlogUnitTests
         }
 
         [Test]
+        public void ValidUserEmailTest()
+        {
+            ArgumentException exception = Assert.Throws<ArgumentException>(delegate {
+                new User("", "name");
+            });
+            Assert.AreEqual(exception.Message, "Email is not valid");
+        }
+
+        [Test]
+        public void ValidUserNameTest()
+        {
+            ArgumentException exception = Assert.Throws<ArgumentException>(delegate {
+                new User("user@email.com", "");
+            });
+            Assert.AreEqual(exception.Message, "Name cannot be empty");
+        }
+
+        [Test]
         public void AddOneUserTest()
         {
             user1 = inMemoryUserRepository.Add(user1);
-            List<User> userList = inMemoryUserRepository.getAll();
+            List<User> userList = inMemoryUserRepository.GetAll();
             Assert.AreEqual(userList.Count, 1);
             Assert.AreEqual(userList[0].Id, "1");
             Assert.AreSame(userList[0], user1);
+            Assert.AreNotEqual(user1.CreatedAt, new DateTime());
+            Assert.AreNotEqual(user1.LastModified, new DateTime());
+        }
+
+        [Test]
+        public void DuplicateUserTest()
+        {
+            Exception exception = Assert.Throws<Exception>(delegate
+            {
+                inMemoryUserRepository.Add(user1);
+                inMemoryUserRepository.Add(user1);
+            });
+            Assert.AreEqual(exception.Message, "Email already used");
         }
 
         [Test]
@@ -35,7 +66,7 @@ namespace MyBlogUnitTests
         {
             user1 = inMemoryUserRepository.Add(user1);
             user2 = inMemoryUserRepository.Add(user2);
-            List<User> userList = inMemoryUserRepository.getAll();
+            List<User> userList = inMemoryUserRepository.GetAll();
             Assert.AreEqual(userList.Count, 2);
             Assert.AreEqual(userList[0], user1);
             Assert.AreEqual(userList[1], user2);
@@ -46,10 +77,9 @@ namespace MyBlogUnitTests
         [Test]
         public void GetUserTest()
         {
-            IUserRepository inMemoryUserRepository = new InMemoryUserRepository();
-
-            inMemoryUserRepository.Add(user1);
+            user1 = inMemoryUserRepository.Add(user1);
             user2 = inMemoryUserRepository.Add(user2);
+            Assert.AreEqual(inMemoryUserRepository.Get(user1.Id), user1);
             Assert.AreEqual(inMemoryUserRepository.Get(user2.Id), user2);
         }
 
@@ -77,6 +107,7 @@ namespace MyBlogUnitTests
             };
             updatedUser = inMemoryUserRepository.Update(user1.Id, updatedUser);
             Assert.AreEqual(updatedUser.Id, user1.Id);
+            Assert.IsNull(user1.Password);
             Assert.AreEqual(user1.LastModified, updatedUser.LastModified);
         }
 
@@ -86,7 +117,7 @@ namespace MyBlogUnitTests
             user1 = inMemoryUserRepository.Add(user1);
             user2 = inMemoryUserRepository.Add(user2);
             inMemoryUserRepository.Remove(user1.Id);
-            Assert.AreEqual(inMemoryUserRepository.getAll().Count, 1);
+            Assert.AreEqual(inMemoryUserRepository.GetAll().Count, 1);
         }
     }
 }

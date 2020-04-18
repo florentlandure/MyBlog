@@ -1810,6 +1810,19 @@
         "runtime": {
           "bin/placeholder/MyBlogCore.dll": {}
         }
+      },
+      "MyBlogInMemoryDB/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MyBlogCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyBlogInMemoryDB.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBlogInMemoryDB.dll": {}
+        }
       }
     }
   },
@@ -6078,12 +6091,18 @@
       "type": "project",
       "path": "../MyBlogCore/MyBlogCore.csproj",
       "msbuildProject": "../MyBlogCore/MyBlogCore.csproj"
+    },
+    "MyBlogInMemoryDB/1.0.0": {
+      "type": "project",
+      "path": "../MyBlogInMemoryDB/MyBlogInMemoryDB.csproj",
+      "msbuildProject": "../MyBlogInMemoryDB/MyBlogInMemoryDB.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1",
-      "MyBlogCore >= 1.0.0"
+      "MyBlogCore >= 1.0.0",
+      "MyBlogInMemoryDB >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6119,6 +6138,9 @@
           "projectReferences": {
             "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogCore\\MyBlogCore.csproj": {
               "projectPath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogCore\\MyBlogCore.csproj"
+            },
+            "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogInMemoryDB\\MyBlogInMemoryDB.csproj": {
+              "projectPath": "C:\\Users\\florent\\source\\repos\\MyBlog\\MyBlogInMemoryDB\\MyBlogInMemoryDB.csproj"
             }
           }
         }

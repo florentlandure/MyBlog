@@ -1,10 +1,10 @@
-﻿using MyBlogCore.Models;
+﻿using MyBlogCore.Utils;
+using MyBlogCore.Validators;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace MyBlogCore
+namespace MyBlogCore.Models
 {
     public class User : Entity, IEquatable<User>
     {
@@ -16,17 +16,17 @@ namespace MyBlogCore
 
         public User(string email, string name)
         {
+            ValidateEmail(email);
+            ValidateName(name);
             Email = email;
             Name = name;
         }
 
-        public User(User user)
+        public User(User user) : this(user.Email, user.Name)
         {
             Id = user.Id;
             CreatedAt = user.CreatedAt;
             LastModified = user.LastModified;
-            Email = user.Email;
-            Name = user.Name;
             Password = user.Password;
             Logo = user.Logo;
             BirthDate = user.BirthDate;
@@ -61,6 +61,19 @@ namespace MyBlogCore
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);
+        }
+
+        private void ValidateEmail(string email)
+        {
+            if (!EmailValidator.IsValidEmail(email))
+            {
+                throw new ArgumentException("Email is not valid");
+            }
+        }
+
+        private void ValidateName(string name)
+        {
+            ValidationUtils.ValidateEmptyArgument(name, "Name cannot be empty");
         }
     }
 }
