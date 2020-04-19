@@ -22,26 +22,25 @@ namespace MyBlogAPI.Controllers
 
         // GET: api/Articles
         [HttpGet]
-        public List<Article> Get()
+        public ActionResult<List<Article>> Get()
         {
-            Console.WriteLine("Get articles");
-            return _articleRepository.GetAll();
+            return Ok(_articleRepository.GetAll());
         }
 
         // GET: api/Articles/5
         [HttpGet("{id}", Name = "Get")]
-        public Article Get(int id)
+        public ActionResult<Article> Get(int id)
         {
-            return _articleRepository.Get(id);
+            Article articleFound = _articleRepository.Get(id);
+            if (articleFound == null) return NotFound();
+            else return Ok(articleFound);
         }
 
         // POST: api/Articles
         [HttpPost]
-        public void Post([FromBody] Article article)
+        public ActionResult<Article> Post([FromBody] Article article)
         {
-            Console.WriteLine(article);
-            _articleRepository.Add(article);
-            Response.StatusCode = 204;
+            return CreatedAtAction(nameof(Post), _articleRepository.Add(article));
         }
 
         // PUT: api/Articles/5
@@ -55,6 +54,7 @@ namespace MyBlogAPI.Controllers
         public void Delete(int id)
         {
             _articleRepository.Remove(id);
+            Response.StatusCode = 204;
         }
     }
 }
